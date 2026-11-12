@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NODOS · estructuras de datos paso a paso</title>
+  <meta name="description" content="Visualizador de pilas, colas circulares, listas enlazadas y árboles binarios de búsqueda, con el código C++ que se ilumina línea por línea.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2306040e'/%3E%3Ccircle cx='16' cy='8' r='4' fill='%2305d9e8'/%3E%3Ccircle cx='8' cy='23' r='4' fill='%23ff2a6d'/%3E%3Ccircle cx='24' cy='23' r='4' fill='%23fcee0a'/%3E%3Cpath d='M16 8 8 23M16 8l8 15' stroke='%239d4edd' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo">◉</span> NODOS <small>// estructuras de datos paso a paso</small></div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="stack" class="on">PILA</button>
+      <button role="tab" data-tab="queue">COLA CIRCULAR</button>
+      <button role="tab" data-tab="list">LISTA ENLAZADA</button>
+      <button role="tab" data-tab="bst">ÁRBOL BINARIO</button>
+    </nav>
+  </header>
+
+  <main class="grid">
+    <section class="stage panel">
+      <div class="panel-h"><span id="title">PILA</span><span id="info" class="dim"></span></div>
+      <div id="canvas" class="canvas" aria-live="polite"></div>
+      <div id="msg" class="msg">▶ Elige una operación</div>
+      <div id="out" class="out" hidden></div>
+    </section>
+
+    <aside class="side">
+      <section class="panel controls">
+        <div class="panel-h">OPERACIONES</div>
+        <div class="row">
+          <input id="val" type="number" value="42" min="-99" max="999" aria-label="Valor">
+          <button id="rand" class="ghost" title="Valor al azar">🎲</button>
+        </div>
+        <div id="ops" class="ops"></div>
+        <div class="row">
+          <button id="fill" class="ghost">LLENAR AL AZAR</button>
+          <button id="clear" class="ghost">VACIAR</button>
+        </div>
+      </section>
+
+      <section class="panel player">
+        <div class="panel-h">REPRODUCTOR <span id="stepn" class="dim"></span></div>
+        <div class="row">
+          <button id="prev" class="ghost" aria-label="Paso anterior">⏮</button>
+          <button id="play" class="ghost" aria-label="Reproducir">⏯</button>
+          <button id="next" class="ghost" aria-label="Paso siguiente">⏭</button>
+          <label class="speed">velocidad <input id="speed" type="range" min="1" max="10" value="5"></label>
+        </div>
+      </section>
+
+      <section class="panel code">
+        <div class="panel-h">CÓDIGO C++ <span id="cplx" class="badge"></span></div>
+        <pre id="code"></pre>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="foot">Hecho por <a href="https://github.com/NeckHurtttt">NeckHurtttt</a> · Estructura de Datos I · UPSA · <a href="https://github.com/NeckHurtttt/nodos">código</a></footer>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
